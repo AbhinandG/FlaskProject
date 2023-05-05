@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Job Portal</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="left-but">
+      <button>Hello, <b>{{username}}</b></button>
+    </div>
+    <div class="button-container">
+      <a href="/logout"><button>Log out</button></a>
+    </div>
+  </header>
+
+
+<center>
+<h1>Here are the Job Listings, {{username}}!</h1>
+      <a href="/add_job"><button>Add Job</button></a>
+    <a href="/customjobs"><button>Find Customised Jobs</button></a>
+  <br>
+  <br>
+<div class="card-container">
+    {% for job in jobs %}
+        <div class="card">
+            <h2>{{ job.title }}</h2>
+            <p>{{ job.company }}</p>
+            <p><b>Location:</b> {{ job.location }}</p>
+            <p><b>Experience Required:</b> {{ job.experience }}</p>
+            <p>{{ job.description }}</p>
+            <p><b>Added By:</b> {{ job.added_by }}</p>
+            <div class="card-actions">
+                <a href="/delete_job/{{ job._id }}"><button>Delete</button></a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+  <br>
+  <br>
+
+</center>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome!</title>
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+
+  
+  <header>
+    <div class="left-but">
+      <button>Hello, <b>{{username}}</b></button>
+    </div>
+    <div class="button-container">
+      <a href="/logout"><button>Log out</button></a>
+    </div>
+  </header>
+  
+<center>
+    <h1>Let's find out which jobs match your profile.</h1>
+    <h3>What are your details?</h3>
+
+     <form method="POST" action="/customjobs">
+    <input type="text" name="exp" placeholder="How much experience do you have? (Please enter only a number)">
+    <label for="loc"><b>Which location is suitable for you?</b></label>
+<select id="loc" name="loc">
+  {% for location in unique_locations %}
+    <option value="{{ location }}">{{ location }}</option>
+  {% endfor %}
+</select>
+    <input type="submit" value="Search for Jobs">
+  </form>
+  <a href='/show_jobs'><button>Go back</button></a>
+</center>
+</body>
+
+</html>

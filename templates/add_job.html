@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Job</title>
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+  <header>
+    <div class="left-but">
+      <button>Hello, <b>{{username}}</b></button>
+    </div>
+    <div class="button-container">
+      <a href="/logout"><button>Log out</button></a>
+    </div>
+  </header>
+  <center>
+	<h1>Add Job</h1>
+  </center>
+	<form method="POST" action="/add_job">
+		<label>Title:</label>
+		<input type="text" name="title" required><br><br>
+		<label>Company:</label>
+		<input type="text" name="company" required><br><br>
+		<label>Location:</label>
+		<input type="text" name="location" required><br><br>
+    <label>Experience Required(Years): </label>
+    <input type="text" name="experience" required><br>
+    <br>
+		<label>Description:</label>
+		<textarea name="description" required></textarea><br><br>
+		<input type="submit" value="Add Job">
+	</form>
+
+  <center>
+  <a href="/show_jobs"><button>Home</button></a>
+    </center>
+</body>
+</html>
